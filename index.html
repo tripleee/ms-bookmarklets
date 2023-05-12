@@ -14,15 +14,17 @@ Feedback and improvements welcome.</p>
 and click one to run it.</p>
 
 <ul>
-<li> <p><a href="javascript:(function()%7Bwindow.location.href%3D%22https%3A%2F%2Fmetasmoke.erwaysoftware.com%2Fsearch%3Futf8%3D%25E2%259C%2593%26why_is_regex%3D1%26why%3D%22%2BencodeURIComponent(prompt(%22regular%20expression%22))%3B%7D)()%3B">
+<li> <p><a href="javascript:(function()%7Bphrase%3DencodeURIComponent(prompt(%22regex%20search%3A%2B%22))%3Bwindow.location.href%3D%22https%3A%2F%2Fmetasmoke.erwaysoftware.com%2Fsearch%3Futf8%3D%25E2%259C%2593%26title_is_regex%3D1%26title%3D%22%2Bphrase%2B%22%26body_is_regex%3D1%26body%3D%22%2Bphrase%2B%22%26username_is_regex%3D1%26username%3D%22%2Bphrase%2B%22%26or_search%3D1%22%7D)()%3B">
   metasmoke regex title + body + user</a></p>
 
   <p>Search for a regex in the title, body, and user name fields.</p>
 
   <pre>
   javascript:(function(){
-    window.location.href="https://metasmoke.erwaysoftware.com/search?utf8=%E2%9C%93&why_is_regex=1&why=" + 
-        encodeURIComponent(prompt("regular expression"));})();
+    phrase=encodeURIComponent(prompt("regex search:"));
+    window.location.href="https://metasmoke.erwaysoftware.com/search?utf8=%E2%9C%93&title_is_regex=1" +
+      "&title=" + phrase + "&body_is_regex=1&body=" + phrase + "&username_is_regex=1&username="
+      + phrase + "&or_search=1"})();
   </pre>
   </li>
 
@@ -38,6 +40,7 @@ and click one to run it.</p>
       + encodeURIComponent(prompt("regular expression"));})();'
   </pre>
   </li>
+
 <li> <a href="javascript:(function()%7Bnses%3Dprompt(%22name%20servers%22).split(%22%20%22)%3Bwindow.location.href%3D%22https%3A%2F%2Fmetasmoke.erwaysoftware.com%2Fsearch%3Futf8%3D%25E2%259C%2593%26why_is_regex%3D1%26why%3D%255Cb%22%20%2B%20nses.join(%22.*%255Cb%22)%20%0A%2B%20%22%257C%255Cb%22%20%2B%20nses.reverse().join(%22.*%255Cb%22)%3B%7D)()%3B">
   metasmoke why - NS pair</a></p>
 
